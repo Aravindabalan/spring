@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <bean id="parentId" class="com.ragavan.inheritex.EmployeeBean" abstract="true">
+        <property name="employeeId">
+            <value>1271</value>
+        </property>
+        <property name="employeeName">
+            <value>Ragavan</value>
+        </property>
+    </bean>
+ 	<bean id="ManagerClass" class="com.ragavan.inheritex.ManagerBean" parent="parentId">
+        <property name="managerDept">
+            <value>Placement</value>
+        </property>
+    </bean>
+    <bean id="DeveloperClass" class="com.ragavan.inheritex.DeveloperBean"
+        parent="parentId">
+        <property name="domain">
+            <value>FullStackDevloperTeam</value>
+        </property>
+    </bean>
+</beans>
